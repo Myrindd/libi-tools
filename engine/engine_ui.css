@@ -1,0 +1,406 @@
+
+
+
+.texture_slot {
+    height: max-content;
+    width: calc(33% - 0.2em);
+    position: relative;
+    border-radius: 0.5em;
+    overflow: hidden;
+    margin: 0.1em;
+    box-shadow: 0 0.2em 0.4em -0.2em black;
+}
+.texture_slot > .wrapper {
+    width: 100%;
+    height: max-content;
+    position: relative;
+}
+.texture_slot > .wrapper > * {
+    width: 100%;
+    /* height: max-content; */
+    position: relative;
+    display: flex;
+    margin: 0;
+}
+.texture_slot > p {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: white;
+    background-color: #0000008a;
+}
+.texture_slot > .tools {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+.texture_slot > .tools > img {
+    width: 1em;
+    height: 1em;
+    padding: 0.25em;
+    cursor: pointer;
+    background-color: #0000008a;
+}
+.texture_slot > .tools > img:nth-child(1) {
+    border-top-right-radius: 0.5em;
+}
+.texture_slot > .tools > img:nth-child(2) {
+    border-top-left-radius: 0.5em;
+}
+.texture_slot.disabled > .tools > img:nth-child(2) {
+    display: none;
+}
+
+.pbr_menu {
+    display: flex;
+    width: calc(100% - 0.5em);
+    flex-direction: row;
+    position: relative;
+    margin: 0.25em;
+    flex-wrap: wrap;
+}
+.pbr_menu > p {
+    width: calc(100% - 0.5em);
+    margin: 0.25em;
+    text-align: center;
+}
+
+
+
+.user_thumbnail {
+    height: 3em;
+    /* border-radius: 1em;
+    box-shadow: 0 0.3em 0.6em -0.3em black; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+.user_thumbnail > .wrapper {
+    height: 140%;
+    width: 4em;
+    overflow: hidden;
+    position: relative;
+    background-color: #394255;
+    border-bottom-right-radius: 100%;
+    transition-duration: 1000ms;
+}
+.user_thumbnail > .wrapper:hover {
+    width: 5em;
+    transition-duration: 1000ms;
+}
+.user_thumbnail > .wrapper > img {
+    height: 130%;
+}
+.user_thumbnail > .wrapper > p {
+    margin: 0.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-left: 0.75em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    text-shadow: 0 0 0.2em BLACK;
+    white-space: pre;
+}
+.user_thumbnail > p {
+    margin: 0.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-left: 0.75em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: pre;
+}
+
+.user_card {
+    border-radius: 1em;
+    position: relative;
+    height: 13em;
+    width: 18em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0.5em;
+}
+.user_card > .landscape {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: 1em;
+}
+.user_card > .landscape > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+    transform: scale(1.1);
+}
+.user_card > .user {
+    width: 10em;
+    border-radius: 10em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    position: relative;
+    background-color: white;
+    height: 156px;
+    margin-bottom: -0.5em;
+    box-shadow: 0 0 1em -0.3em white
+}
+.user_card > .user > img {
+    width: calc(100% - 0.5em);
+    margin: 0.25em;
+    margin-bottom: 0;
+    border-radius: 10em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.user_card > .user > .name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.user_card > .user > .name > p {
+    margin: 0.25em;
+    width: calc(100% - 0.5em);
+    text-align: center;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-shadow: 0 0.05em black;
+}
+.user_card > .corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.25em;
+    align-items: center;
+    font-size: 1.2em;
+}
+.user_card > .corner > img {
+    height: 1em;
+    margin: 0.25em;
+    margin-right: 0.75em;
+    margin-left: 0;
+    filter: drop-shadow(0 0 0.05em black);
+}
+.user_card > .corner > p {
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 0 0.1em black;
+    margin: 0.25em;
+}
+
+#engine_loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#canvas_wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+#ui_cross {
+    position: absolute;
+    left: calc(50vw - 1.25em);
+    top: calc(50vh - 1.25em);
+    pointer-events: none;
+    opacity: 0.5;
+}
+#ui_cross > img {
+    height: 2.5em;
+}
+
+#ui_display {
+    background-color: rgba(0, 0, 0, 0.436);
+    box-shadow: 0 0 0 0.05em white;
+    border-radius: 2em;
+}
+#ui_display p {
+    margin: 0.25em;
+    color: white;
+}
+
+
+#multitool {
+    position: absolute;
+    font-size: medium;
+    height: 2.6em;
+    width: 2.6em;
+    top: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+    border-radius: 2em;
+    border: 0.2em solid white;
+    z-index: 10000;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    filter: drop-shadow(0 0.1em 0.1em rgba(0,0,0,0.5));
+}
+#multitool .bar {
+    position: absolute;
+    width: 0.25em;
+    height: 0.3em;
+    right: 0.3em;
+    top: 1.2em;
+    border-radius: 0.3em;
+    background-color: white;
+    transition-duration: 300ms;
+    z-index: 2;
+}
+#multitool .bar:nth-child(1) {
+    transform: translate(-0.1em, 0em);
+    transition-duration: 300ms;
+}
+#multitool .bar:nth-child(2) {
+    opacity: 1.0;
+    transform: translate(-0.85em, 0em);
+    transition-duration: 300ms;
+}
+#multitool .bar:nth-child(3) {
+    transform: translate(-1.6em, 0em);
+    transition-duration: 300ms;
+}
+
+#multitool.open .bar:nth-child(1) {
+    width: 1.5em;
+    transform: translate(-0.25em, 0em);
+    transition-duration: 300ms;
+}
+#multitool.open .bar:nth-child(2) {
+    height: 1em;
+    transition-duration: 300ms;
+}
+#multitool.open .bar:nth-child(3) {
+    width: 1em;
+    transform: translate(-0.5em, -0.7em);
+    transition-duration: 300ms;
+}
+#multitool.open {
+    border: 0.05em solid rgba(255,255,255,0);
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+}
+
+#multitool.pinned .bar:nth-child(1) {
+    transform: translate(0em, 0em) rotate(45deg) scaleX(1);
+    width: 2em;
+    transition-duration: 300ms;
+}
+#multitool.pinned .bar:nth-child(2) {
+    opacity: 0;
+    transition-duration: 300ms;
+}
+#multitool.pinned .bar:nth-child(3) {
+    transform: translate(0em, 0em) rotate(-45deg) scaleX(1);
+    width: 2em;
+    transition-duration: 300ms;
+}
+#multitool.pinned {
+    border: 0.05em solid rgba(255,255,255,0);
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+}
+
+.brush .brush_button {
+    width: 2.5em;
+    height: 2.5em;
+    position: relative;
+    box-shadow: inset 0 0 0.1em 0 black;
+    border-radius: 0.5em;
+    margin: 0.25em;
+    cursor: pointer;
+    transition: 300ms;
+    transition-property: box-shadow;
+}
+.brush .brush_button.pressed {
+    box-shadow: inset 0 0.3em 0.6em -0.3em black;
+    background-color: white;
+    transition: 300ms;
+    transition-property: box-shadow, background-color;
+}
+.brush .brush_button > .wrapper {
+    width: calc(100% - 0.5em);
+    height: calc(100% - 0.5em);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 10em;
+}
+
+.joystick {
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    border: 0.15em solid #ffffff81;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.joystick > .stick {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4em;
+    height: 4em;
+    background-color: #ffffff81;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#left_joystick {
+    left: 6em;
+    top: calc(100% - 6em);
+}
+
+#right_joystick {
+    left: calc(100% - 6em);
+    top: calc(100% - 6em);
+}
+
+.screen_button {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    border: 0.15em solid white;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0.5;
+}
+.screen_button > img {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    height: 80%;
+}
